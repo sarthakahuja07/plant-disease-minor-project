@@ -4,8 +4,9 @@ import { uploadStart, uploadThunk } from '../redux/fileSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import LoadingComponent from '../components/Skeletons/LoadinComponent'
 import { CoverImage } from '../styles'
+import { scroller ,animateScroll as scroll } from 'react-scroll'
 
-const ImageForm = () => {
+const ImageForm = ({ setIsResultGenerated }) => {
     const dispatch = useDispatch()
     const { file, loading } = useSelector(state => state.fileState)
 
@@ -21,6 +22,11 @@ const ImageForm = () => {
             dispatch(uploadThunk(reader.result))
         }
     };
+
+    const generateResult = () => {
+        scroll.scrollTo(560);
+        setIsResultGenerated(true)
+    }
 
 
     return (
@@ -116,7 +122,7 @@ const ImageForm = () => {
                                 <strong>OR</strong>
                             </Typography>
 
-                            <Button type="submit" variant="contained" color="primary" sx={{ textAlign: 'center', width: ['40%', '200px'], mx: 'auto', py: 2, height: '60px' }}>
+                            <Button type="submit" variant="contained" color="primary" onClick={generateResult} sx={{ textAlign: 'center', width: ['40%', '200px'], mx: 'auto', py: 2, height: '60px' }}>
                                 See Results
                             </Button>
 

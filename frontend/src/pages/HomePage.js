@@ -1,10 +1,15 @@
 import { Box, Container, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import ImageForm from '../components/ImageForm'
 import ImageListComponent from '../components/ImageListComponent'
+import ResultComponent from '../components/ResultComponent'
+import { useSelector } from 'react-redux'
+import { Element } from 'react-scroll'
 
 const HomePage = () => {
-
+    const { isAuthenticated } = useSelector(state => state.authState)
+    const { file } = useSelector(state => state.fileState)
+    const [isResultGenerated, setIsResultGenerated] = useState(false);
     return (
         <>
             <Box sx={{
@@ -23,8 +28,20 @@ const HomePage = () => {
                     backgroundColor: 'rgba(0,0,0,0.3)',
                 },
             }}>
-                <ImageForm />
+                <ImageForm setIsResultGenerated={setIsResultGenerated} />
             </Box>
+
+            {
+                isAuthenticated && isResultGenerated && file &&
+                (
+                    <Box sx={{ mt: 4 }}>
+
+                        <Container>
+                            <ResultComponent />
+                        </Container>
+                    </Box>
+                )
+            }
 
             <Box sx={{ mt: 4 }}>
                 <Container>
