@@ -4,7 +4,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Footer = () => {
     return (
-        <Box sx={{ bgcolor: 'primary.main', width: '100%', padding: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+        <Box sx={{ bgcolor: 'primary.main', width: '100%', padding: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
             <Box>
                 <Typography color='white.main' variant='body1' sx={{ display: 'flex', justifyContent: 'center' }}>
                     View Project On
@@ -13,10 +13,10 @@ const Footer = () => {
                     </Link>
                 </Typography>
                 <Typography color='white.main' variant='body1'>
-                    Made with
+                    Made With
                     <Typography color='white.main' component='span' variant='h6'>
                         ❤️
-                    </Typography>by&nbsp;
+                    </Typography>By&nbsp;
                     <Link color='white.main' href='https://github.com/sarthakahuja07' target='_blank'>
                         Sarthak
                     </Link> &&nbsp;

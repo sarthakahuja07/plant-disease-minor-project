@@ -5,9 +5,14 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Avatar, CssBaseline, Button } from '@mui/material';
 import ColorScroll from '../utils/ColorScroll';
+import LoginHook from './Hooks/LoginHook';
+import LogoutHook from './Hooks/LogoutHook';
+import { useSelector, useDispatch } from 'react-redux';
+
 
 const NavBar = (props) => {
-    const isAuth = true
+    const { isAuthenticated, user, loading } = useSelector(state => state.authState)
+    const dispatch = useDispatch()
 
     return (
         <>
@@ -20,21 +25,19 @@ const NavBar = (props) => {
                                 <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white.main' }}>
                                     Plant Disease Detector
                                 </Typography>
-                                {isAuth ? (
+                                {isAuthenticated ? (
                                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                         <Avatar
                                             alt="Remy Sharp"
-                                            src="https://source.unsplash.com/random"
+                                            src={user.imageUrl}
                                             sx={{ mr: 2 }}
                                         />
-                                        <Button variant="contained" color="secondary">
-                                            Logout
-                                        </Button>
+                                        <LogoutHook />
                                     </Box>
                                 ) : (
-                                    <Button variant="contained" color="secondary">
-                                        Login
-                                    </Button>
+                                    <>
+                                        <LoginHook />
+                                    </>
                                 )}
                             </Toolbar>
                         </AppBar>

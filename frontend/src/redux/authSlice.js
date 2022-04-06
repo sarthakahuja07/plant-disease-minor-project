@@ -33,13 +33,17 @@ export const { loginStart, loginSuccess, loginFailure } = authSlice.actions;
 export default authSlice.reducer;
 
 
-export const loginThunk = () => async (dispatch) => {
+export const loginThunk = (res) => async (dispatch) => {
     dispatch(loginStart());
-    // google auth here if success call the loginSuccess action and if not loginFailure action 
-    
+    if (res.success) {
+        const { success, ...user } = res;
+        dispatch(loginSuccess(user));
+    } else {
+        dispatch(loginFailure(res));
+    }
 }
 
 export const logoutThunk = () => async (dispatch) => {
     dispatch({ type: 'LOGOUT' });
-    
+
 }

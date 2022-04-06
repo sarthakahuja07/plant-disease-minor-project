@@ -18,10 +18,8 @@ const ImageForm = () => {
         var url = reader.readAsDataURL(file);
 
         reader.onloadend = function (e) {
-            console.log(reader.result);
             dispatch(uploadThunk(reader.result))
         }
-        console.log(url);
     };
 
 

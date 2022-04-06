@@ -92,6 +92,34 @@ const ImageListComponent = () => {
             img: process.env.PUBLIC_URL + '/assets/sample/sampleImage13.JPG',
             title: 'sample 13',
         },
+        {
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage14.JPG',
+            title: 'sample 14',
+        },
+        {
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage15.JPG',
+            title: 'sample 15',
+        },
+        {
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage16.JPG',
+            title: 'sample 16',
+        },
+        {
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage17.JPG',
+            title: 'sample 17',
+        },
+        {
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage18.JPG',
+            title: 'sample 18',
+        },
+        {
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage19.JPG',
+            title: 'sample 19',
+        },
+        {
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage20.JPG',
+            title: 'sample 20',
+        },
 
     ];
 
