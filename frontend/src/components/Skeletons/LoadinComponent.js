@@ -31,7 +31,7 @@ const LoadingComponent = ({ heigth }) => {
                     variant="indeterminate"
                     disableShrink
                     sx={{
-                        color: 'primary.main',
+                        color: 'secondary.main',
                         animationDuration: '550ms',
                         position: 'absolute',
                         left: 0,

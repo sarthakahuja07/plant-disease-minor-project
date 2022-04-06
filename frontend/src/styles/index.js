@@ -5,3 +5,7 @@ export const Img = styled('img')(({ theme }) => ({
     width: '100%',
 
 }));
+export const CoverImage = styled('img')(({ theme }) => ({
+    width: '100%',
+    objectFit: 'cover',
+}));

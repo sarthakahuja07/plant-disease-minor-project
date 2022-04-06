@@ -2,12 +2,14 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import authReducer from './authSlice';
+import fileReducer from './fileSlice';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from "redux-persist/lib/storage";
 
 
 const combinedReducer = combineReducers({
     authState: authReducer,
+    fileState: fileReducer,
 })
 
 const rootReducer = (state, action) => {
