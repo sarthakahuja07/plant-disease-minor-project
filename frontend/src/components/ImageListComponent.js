@@ -93,31 +93,31 @@ const ImageListComponent = () => {
             title: 'sample 13',
         },
         {
-            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage14.JPG',
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage14.jpg',
             title: 'sample 14',
         },
         {
-            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage15.JPG',
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage15.jpg',
             title: 'sample 15',
         },
         {
-            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage16.JPG',
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage16.jpg',
             title: 'sample 16',
         },
         {
-            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage17.JPG',
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage17.jpg',
             title: 'sample 17',
         },
         {
-            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage18.JPG',
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage18.jpg',
             title: 'sample 18',
         },
         {
-            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage19.JPG',
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage19.jpg',
             title: 'sample 19',
         },
         {
-            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage20.JPG',
+            img: process.env.PUBLIC_URL + '/assets/sample/sampleImage20.jpg',
             title: 'sample 20',
         },
 
