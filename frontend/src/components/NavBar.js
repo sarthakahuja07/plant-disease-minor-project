@@ -26,11 +26,11 @@ const NavBar = (props) => {
                                     Plant Disease Detector
                                 </Typography>
                                 {isAuthenticated ? (
-                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                    <Box sx={{  display: 'flex', alignItems: 'center' }}>
                                         <Avatar
                                             alt="Remy Sharp"
                                             src={user.imageUrl}
-                                            sx={{ mr: 2 }}
+                                            sx={{ mr: [1,2] }}
                                         />
                                         <LogoutHook />
                                     </Box>
