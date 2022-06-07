@@ -39,7 +39,7 @@ const ImageForm = () => {
 	const generateResult = () => {
 		if (isAuthenticated) {
 			scroll.scrollTo(560);
-			dispatch(generateThunk());
+			dispatch(generateThunk(file));
 		} else {
 			setOpenSnackbar(true);
 		}

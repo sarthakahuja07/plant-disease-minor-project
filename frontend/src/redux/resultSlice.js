@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const resultSlice = createSlice({
 	name: "result",
@@ -32,14 +33,19 @@ export const { generateStart, generateSuccess, generateFailure } =
 	resultSlice.actions;
 export default resultSlice.reducer;
 
-
-export const generateThunk = () => async (dispatch) => {
+export const generateThunk = (file) => async (dispatch) => {
 	dispatch(generateStart());
 	try {
-		// const { data } = await Api.getCategories(appliances);
-        const data = "hello"
-        dispatch(generateSuccess(data));
+		console.log(file);
+        console.log(process.env.REACT_APP_MODEL_API_URL);
+		const response = await axios.post(process.env.REACT_APP_MODEL_API_URL, {
+			// imgUrl: file
+			files: file
+		});
+		const data = "hello";
+		// console.log(response)
+		dispatch(generateSuccess(data));
 	} catch (err) {
-        dispatch(generateFailure(err));
+		dispatch(generateFailure(err));
 	}
 };
