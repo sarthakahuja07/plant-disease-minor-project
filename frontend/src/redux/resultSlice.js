@@ -1,5 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import resultListJson from "../data.json";
+
+const resultList = Object.keys(resultListJson).map((key) => {
+	return {
+		key: key,
+		value: resultListJson[key]
+	};
+});
 
 const resultSlice = createSlice({
 	name: "result",
@@ -39,11 +47,14 @@ export const generateThunk = (file) => async (dispatch) => {
 		console.log(file);
 		const response = await axios.post("http://127.0.0.1:5000/submit", {
 			files: JSON.stringify(file)
-			// files: file
 		});
-		console.log(response);
-		const data = "hello";
-		dispatch(generateSuccess(data));
+
+		const result = resultList.find((item) => {
+			return item.key === response.data;
+		});
+		console.log(result.value);
+
+		dispatch(generateSuccess(result.value));
 	} catch (err) {
 		dispatch(generateFailure(err));
 	}
