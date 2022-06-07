@@ -1,0 +1,14 @@
+{
+	"Potato___healthy": {
+		"type": "",
+		"diseases": "example glossary",
+		"symptoms": "", 
+		"prevention": ""
+	},
+    "Potato___disease": {
+        "type": "",
+        "diseases": "example glossary",
+        "symptoms": "",
+        "prevention": ""
+    }
+}

@@ -247,18 +247,15 @@ def submit():
     if request.method == 'POST':
 
         jsonData = request.get_json()
-        print(jsonData['files'])
+        # print(jsonData['files'])
         a = jsonData['files']
-        
-        b = a =='http://localhost:3000/assets/sample/sampleImage2.JPG'
-        print(b)
-        print('test',a)
-        print('test2','http://localhost:3000/assets/sample/sampleImage2.JPG')
-        # urllib.request.urlretrieve(a, "inputImage.jpg")
+        arr = a.split('"')
+        print(arr[1])
+        urllib.request.urlretrieve(arr[1], "inputImage.jpg")
 
 
 
-        img = cv2.imread('1c10ab31-02b9-4008-b66f-9b44d8a9d323___FREC_Scab 3084_270deg.JPG')
+        img = cv2.imread('inputImage.jpg')
         _, img_encoded = cv2.imencode('.jpg', img)
         img_string = img_encoded.tostring()
         
