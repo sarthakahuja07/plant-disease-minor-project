@@ -6,7 +6,10 @@ from PIL import Image as I
 from flask import Flask, render_template, request
 from regex import P
 import torch
-
+from flask_cors import CORS
+import cv2
+import numpy as np
+import urllib.request
 
 #from response_dto.prediction_response_dto import PredictionResponseDto
 #from deep_learning_model.predictions.classify_image import ImageClassifier
@@ -224,15 +227,15 @@ img = I.open("1c10ab31-02b9-4008-b66f-9b44d8a9d323___FREC_Scab 3084_270deg.JPG")
 p = predict_image(convert_tensor(img), model)
 print(p)
 app = Flask(__name__)
+CORS(app)
+
 # routes
 import os
 from flask import render_template, request, redirect, url_for
 
-
-@app.route("/", methods=['GET', 'POST'])
-def kuch_bhi():
-    return 0
-
+@app.route("/")
+def helloWorld():
+  return "Hello, cross-origin-world!"
 
 @app.route("/about")
 def about_page():
@@ -243,8 +246,26 @@ def about_page():
 def submit():
     if request.method == 'POST':
 
-        img = I.open("1c10ab31-02b9-4008-b66f-9b44d8a9d323___FREC_Scab 3084_270deg.JPG")
+        jsonData = request.get_json()
+        print(jsonData['files'])
+        a = jsonData['files']
+        
+        b = a =='http://localhost:3000/assets/sample/sampleImage2.JPG'
+        print(b)
+        print('test',a)
+        print('test2','http://localhost:3000/assets/sample/sampleImage2.JPG')
+        # urllib.request.urlretrieve(a, "inputImage.jpg")
+
+
+
+        img = cv2.imread('1c10ab31-02b9-4008-b66f-9b44d8a9d323___FREC_Scab 3084_270deg.JPG')
+        _, img_encoded = cv2.imencode('.jpg', img)
+        img_string = img_encoded.tostring()
+        
+        nparr = np.fromstring(img_string, np.uint8)
+        img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         p = predict_image(convert_tensor(img), model)
+        
         print(p)
         
 # how to send a response

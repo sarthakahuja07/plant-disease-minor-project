@@ -37,13 +37,12 @@ export const generateThunk = (file) => async (dispatch) => {
 	dispatch(generateStart());
 	try {
 		console.log(file);
-        console.log(process.env.REACT_APP_MODEL_API_URL);
-		const response = await axios.post(process.env.REACT_APP_MODEL_API_URL, {
-			// imgUrl: file
-			files: file
+		const response = await axios.post("http://127.0.0.1:5000/submit", {
+			files: JSON.stringify(file)
+			// files: file
 		});
+		console.log(response);
 		const data = "hello";
-		// console.log(response)
 		dispatch(generateSuccess(data));
 	} catch (err) {
 		dispatch(generateFailure(err));
