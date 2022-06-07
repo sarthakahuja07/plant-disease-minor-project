@@ -253,8 +253,6 @@ def submit():
         print(arr[1])
         urllib.request.urlretrieve(arr[1], "inputImage.jpg")
 
-
-
         img = cv2.imread('inputImage.jpg')
         _, img_encoded = cv2.imencode('.jpg', img)
         img_string = img_encoded.tostring()
