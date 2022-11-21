@@ -6,7 +6,7 @@ import { logoutThunk } from '../../redux/authSlice';
 
 function LogoutHook() {
     const dispatch = useDispatch()
-    const clientID = process.env.REACT_APP_GOOGLE_CLIENT_ID
+    const clientID = '1036339638912-719v4ustu8pa2ks393e15nja6i8rhba7.apps.googleusercontent.com'
 
     const onLogoutSuccess = (res) => {
         dispatch(logoutThunk());
