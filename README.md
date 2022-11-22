@@ -1,6 +1,6 @@
 Website - https://plant-disease-detection-346209.web.app/
 
-#### Image Showcase
+# Image Showcase
 
 ### Home Page
 
